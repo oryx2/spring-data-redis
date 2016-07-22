@@ -221,7 +221,18 @@
 
 	<build>
 		<plugins>
-		
+			 <plugin>
+				 <groupId>org.apache.felix</groupId>
+				 <artifactId>maven-bundle-plugin</artifactId>
+			         <extensions>true</extensions>
+				 <configuration>
+				      	<instructions>
+				        <Export-Package>org.foo.myproject.api</Export-Package>
+				        <Private-Package>org.foo.myproject.*</Private-Package>
+				        <Bundle-Activator>org.foo.myproject.impl1.Activator</Bundle-Activator>
+				      </instructions>
+			    	</configuration>
+			  </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
